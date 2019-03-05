@@ -1,0 +1,23 @@
+.form_block25{
+    width: 18%;float: left;padding: 6px;display: block;font-size: 16px;font-weight: 500;font-family: -apple-system,BlinkMacSystemFont,San Francisco,Roboto,Segoe UI,Helvetica Neue,sans-serif;
+  }
+  
+  .form_block75{
+    width: 50%; padding: 6px; display: block;
+  }
+  .btn{
+    width: auto;padding: 6px;display: block;background: #fff;border: 1px solid;border-radius: 6px;margin-left: auto;margin-right: auto;
+  }
+  h2{
+    font-size: 25px;font-weight: 500;font-family: -apple-system,BlinkMacSystemFont,San Francisco,Roboto,Segoe UI,Helvetica Neue,sans-serif;
+  }
+
+  .Polaris-Page {
+    margin: 0 auto;
+    padding: 0;
+    max-width: 100% !important;
+}
+
+.Polaris-DataTable__Cell--header {
+  text-align: center !important;
+}

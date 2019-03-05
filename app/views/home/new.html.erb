@@ -1,0 +1,36 @@
+<% content_for :javascript do %>
+  <script type="text/javascript">
+    ShopifyApp.ready(function(){
+      ShopifyApp.Bar.initialize({ title: "Home" });
+    });
+  </script>
+<% end %>
+
+
+<%= form_for @banner.present? ? @banner: :banner,:url => :shop_modify, :method => :POST do |f| %>
+  <%
+=begin%>
+ <% if @banner.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@banner.errors.count, "error") %> prohibited this image from being saved:</h2>
+      <ul>
+      <% @banner.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %> 
+<%
+=end%>
+
+
+  <%= f.text_field :text, :class=>'Polaris-TextField__Input', placeholder: "Banner Text" %>
+  <%= f.text_field :font_color, :class=>'Polaris-TextField__Input', placeholder: "Font Color" %>
+  <%= f.text_field :font_size, :class=>'Polaris-TextField__Input', placeholder: "Font Size" %>
+  <%= f.text_field :background_color, :class=>'Polaris-TextField__Input', placeholder: "Background Color" %>
+  <%= f.text_field :padding, :class=>'Polaris-TextField__Input', placeholder: "Padding" %>
+  <%= f.submit 'Save', class: "antshant" %>
+
+
+
+  <% end %>

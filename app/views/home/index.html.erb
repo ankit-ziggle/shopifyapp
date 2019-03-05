@@ -1,0 +1,209 @@
+
+<% content_for :javascript do %>
+  <script type="text/javascript">
+    ShopifyApp.ready(function(){
+      ShopifyApp.Bar.initialize({ title: "Home" });
+    });
+  </script>
+<% end %>
+
+<h2> Promotional Message </h2>
+
+
+<div id="form_add">
+<%= form_for @banner.present? ? @banner: :banner,:url => :shop_modify, :method => :POST do |f| %>
+
+
+   <% if @banner.present? %>
+  <%=f.hidden_field :shop_id, value: @banner&.shop_id %>
+   <% end %>
+   <div class ="form_block25" >
+   <%= f.label :Write_your_Promotional_Message %>
+   </div>
+  <div class ="form_block75"  >
+  <div class="Polaris-TextField Polaris-TextField--hasValue form_textarea"><%= f.text_field :text, :class=>'Polaris-TextField__Input', placeholder: "Banner Text" %><div class="Polaris-TextField__Backdrop"></div></div>
+  
+</div>
+<div class ="form_block25" >
+  <%= f.label :Font_Color %>
+  </div>
+  <div class ="form_block75"  >
+  <div class="Polaris-TextField">
+                           <%= f.text_field :font_color, :class=>'Polaris-TextField__Input mini-col', placeholder: "select color" %>
+                           <div class="Polaris-TextField__Backdrop"></div>
+                           </div>
+  <%
+=begin%>
+ <div class="Polaris-TextField Polaris-TextField--hasValue">
+  <%= f.text_field :font_color,  :class => "mini-col", placeholder: "eg: Black or #dde244" %>
+  
+  </div> 
+<%
+=end%>
+  
+  </div> 
+ 
+ 
+<div class ="form_block25" >
+  <%= f.label :Font_Size %>
+  </div>
+  <div class ="form_block75"  >
+  <div class="Polaris-TextField Polaris-TextField--hasValue"><%= f.text_field :font_size, :class=>'Polaris-TextField__Input', placeholder: "Font Size"%><div class="Polaris-TextField__Backdrop"></div></div> 
+  </div>
+<div class ="form_block25" >
+  <%= f.label :background_color %>
+  </div>
+  <div class ="form_block75"  >
+
+  <div class="Polaris-TextField">
+                           <%= f.text_field :background_color, :class=>'Polaris-TextField__Input mini-col', placeholder: "select color" %>
+                           <div class="Polaris-TextField__Backdrop"></div>
+                           </div>
+  <%
+=begin%>
+ <div class="Polaris-TextField Polaris-TextField--hasValue"><%= f.text_field :background_color,  :class => "mini-col", placeholder: "eg: Black or #dde244" %></div>  
+<%
+=end%>
+  
+  
+ 
+  </div>
+  
+<div class ="form_block25" >
+  <%= f.label :Padding %>
+  </div>
+  <div class ="form_block75"  >
+  <div class="Polaris-TextField Polaris-TextField--hasValue"><%= f.text_field :padding, :class=>'Polaris-TextField__Input', placeholder: "Padding" %><div class="Polaris-TextField__Backdrop"></div></div>
+  <%
+=begin%>
+ <%= f.text_field :padding, :class=>'form_padding', placeholder: "Padding" %> 
+<%
+=end%>
+  </div>
+
+  <div class ="form_block25"  >
+  <div class="Polaris-FormLayout__Item"><button type="submit" class="Polaris-Button"><span class="Polaris-Button__Content"><span class="Polaris-Button__Text">Save</span></span></button></div></div><span class="Polaris-VisuallyHidden"><button type="submit" aria-hidden="true"></button></span>
+  <%
+=begin%>
+ <%= f.submit 'Save', class: "btn", data: { confirm: 'Message Saved' } %> 
+<%
+=end%>
+</div>
+<% end %>
+</div>
+  <button type="button" class="Polaris-Button Polaris-Button--primary" onclick="formAdd()" ><span class="Polaris-Button__Content"><span class="Polaris-Button__Text">Add Banner</span></span></button>
+
+<div style="--top-bar-background:#00848e; --top-bar-color:#f9fafb; --top-bar-background-lighter:#1d9ba4;">
+  <div class="Polaris-Page">
+    <div class="Polaris-Page-Header">
+      <div class="Polaris-Page-Header__TitleAndRollup">
+        <div class="Polaris-Page-Header__Title">
+          <div>
+            <h1 class="Polaris-DisplayText Polaris-DisplayText--sizeLarge">Previously used Banner</h1>
+          </div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+    <div class="Polaris-Page__Content">
+      <div class="Polaris-Card">
+        <div class="">
+          <div class="Polaris-DataTable__Navigation"><button type="button" class="Polaris-Button Polaris-Button--disabled Polaris-Button--plain Polaris-Button--iconOnly" disabled="" aria-label="Scroll table left one column"><span class="Polaris-Button__Content"><span class="Polaris-Button__Icon"><span class="Polaris-Icon"><svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true">
+                      <path d="M12 16a.997.997 0 0 1-.707-.293l-5-5a.999.999 0 0 1 0-1.414l5-5a.999.999 0 1 1 1.414 1.414L8.414 10l4.293 4.293A.999.999 0 0 1 12 16" fill-rule="evenodd"></path>
+                    </svg></span></span></span></button><button type="button" class="Polaris-Button Polaris-Button--plain Polaris-Button--iconOnly" aria-label="Scroll table right one column"><span class="Polaris-Button__Content"><span class="Polaris-Button__Icon"><span class="Polaris-Icon"><svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true">
+                      <path d="M8 16a.999.999 0 0 1-.707-1.707L11.586 10 7.293 5.707a.999.999 0 1 1 1.414-1.414l5 5a.999.999 0 0 1 0 1.414l-5 5A.997.997 0 0 1 8 16" fill-rule="evenodd"></path>
+                    </svg></span></span></span></button></div>
+          <div class="Polaris-DataTable">
+            <div class="">
+              <table class="Polaris-DataTable__Table">
+                <thead>
+                  <tr>
+                    <th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--text" scope="col" style="height: 53px;"> Message	</th>
+                    <th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 53px;">Font Color	</th>
+                    <th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 53px;">Font Size	</th>
+                    <th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 53px;">Background Color	</th>
+                    <th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 53px;">Padding</th>
+                    <th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 53px;">Activate</th>
+                    <th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 53px;"></th>
+
+                  </tr>
+                </thead>
+                 <tbody>
+                <% @bannerList.each do |banner| %>
+               
+                    <tr class="Polaris-DataTable__TableRow">
+                      <%= form_for banner,:url => :shop_modify, :method => :POST do |f| %>
+                    <td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--text"  style="height: 112px;"><div class="Polaris-TextField Polaris-TextField--hasValue"><%= f.text_field :text, :class=>'Polaris-TextField__Input', placeholder: "Banner Text" %><div class="Polaris-TextField__Backdrop"></div></div></td>
+                    <td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 112px;"><div class="Polaris-TextField">
+                           <%= f.hidden_field :font_color, :class=>'Polaris-TextField__Input', id:"f-#{banner.id}",  placeholder: "select color" %>
+                           <%= f.text_field :font_color,  :class => "mini-col Polaris-TextField__Input", placeholder: "eg: Black or #dde244", id:"c-#{banner.id}" %>
+                           <%
+=begin%>
+ <input type="text" class="mini-col Polaris-TextField__Input" id="c-<%=banner.id %>" /> 
+<%
+=end%>
+                           <div class="Polaris-TextField__Backdrop"></div>
+                           </div></td>
+                    <td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 112px;"><div class="Polaris-TextField Polaris-TextField--hasValue"><%= f.text_field :font_size, :class=>'Polaris-TextField__Input', placeholder: "Font Size"%><div class="Polaris-TextField__Backdrop"></div></div> </td>
+                    <td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 112px;"><div class="Polaris-TextField Polaris-TextField--hasValue">
+                    <%= f.hidden_field :background_color, id:"b-#{banner.id}", placeholder: "eg: Black or #dde244" %>
+                    <%= f.text_field :background_color,  :class => "mini-col Polaris-TextField__Input", placeholder: "eg: Black or #dde244", id:"c-#{banner.id}" %>
+                    <%
+=begin%>
+ <input type="text" class="mini-col Polaris-TextField__Input" id="t-<%=banner.id %>" /> 
+<%
+=end%>
+                    
+                     <div class="Polaris-TextField__Backdrop"></div>
+                    
+                    </div> </td>
+                    <td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 112px;"><div class="Polaris-TextField Polaris-TextField--hasValue"><%= f.text_field :padding, :class=>'Polaris-TextField__Input', placeholder: "Padding" %><div class="Polaris-TextField__Backdrop"></div></div></td>
+                    <td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 112px;"><label class="Polaris-Choice" ><span class="Polaris-Choice__Control"><span class="Polaris-RadioButton"><%= f.radio_button :is_active, "1",{:class=>'Polaris-RadioButton__Input', placeholder: "Activate",checked: banner.is_active==1}%><span class="Polaris-RadioButton__Backdrop"></span><span class="Polaris-RadioButton__Icon"></span></span></span><span class="Polaris-Choice__Label"></span></label></td>
+                      <%= f.hidden_field :id %>
+                    <td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 112px;"><div class="Polaris-FormLayout__Item"><button type="submit" class="Polaris-Button"><span class="Polaris-Button__Content"><span class="Polaris-Button__Text">Save</span></span></button></div></div><span class="Polaris-VisuallyHidden"><button type="submit" aria-hidden="true"></button></span></td>
+                     <% end %>
+                  </tr>
+                  <% end %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<h2>Previously used Banner</h2>
+
+ 
+<script>
+let d_form=document.getElementById('form_add');
+d_form.style.display='none';
+function formAdd(){
+ 
+  d_form.style.display='block';
+
+}
+
+  
+
+  $('.mini-col').minicolors(
+    {
+        opacity: false,
+        defaultValue: '#2083fd',
+        control: 'hue',
+        textfield: false,
+       change: function(hex, opacity) {
+          const id=  $(this).attr('id');
+          let id_selector='';
+          if(id.indexOf('t')>-1)
+          id_selector='#'+ id.replace('t','b');
+        else
+          id_selector='#'+ id.replace('c','f');
+          $(id_selector).val(hex);
+         }
+  
+  }
+  );
+
+</script>

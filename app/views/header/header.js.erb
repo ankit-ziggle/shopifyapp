@@ -1,0 +1,13 @@
+var div = document.createElement("div");
+div.style.width = "100%";
+div.style.background = "<%= @banner[:background_color] %>";
+div.style.color = "<%= @banner[:font_color] %>";
+div.style.fontSize = "<%= @banner[:font_size] %>px";
+div.style.padding = "<%= @banner[:padding] %>px";
+div.style.textAlign = "center";
+div.style.wordBreak = "break-word";
+div.style.textTransform = "capitalize";
+
+div.innerHTML = "<%= @banner[:text] %>";
+
+document.getElementsByClassName('shopify-section')[0].prepend(div);
