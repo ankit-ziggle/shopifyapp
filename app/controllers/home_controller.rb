@@ -47,6 +47,6 @@ class HomeController < ShopifyApp::AuthenticatedController
   end
   private
   def banner_params
-    params.require(:banner).permit(:text,:font_color,:font_size,:background_color,:padding,:shop_id,:is_active, :id)
+    params.require(:banner).permit(:text,:font_color,:font_size,:background_color,:padding,:shop_id,:is_active, :id, :active_at, :deactive_at)
   end
 end

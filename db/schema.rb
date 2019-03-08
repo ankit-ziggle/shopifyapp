@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_26_123146) do
+ActiveRecord::Schema.define(version: 2019_03_07_112503) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 2019_02_26_123146) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "is_active"
+    t.datetime "active_at"
+    t.datetime "deactive_at"
     t.index ["shop_id"], name: "index_banners_on_shop_id"
   end
 

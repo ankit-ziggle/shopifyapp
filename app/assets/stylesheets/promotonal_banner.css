@@ -1,5 +1,5 @@
 .form_block25{
-    width: 18%;float: left;padding: 6px;display: block;font-size: 16px;font-weight: 500;font-family: -apple-system,BlinkMacSystemFont,San Francisco,Roboto,Segoe UI,Helvetica Neue,sans-serif;
+    width: 24%;float: left;padding: 6px;display: block;font-size: 16px;font-weight: 500;font-family: -apple-system,BlinkMacSystemFont,San Francisco,Roboto,Segoe UI,Helvetica Neue,sans-serif;
   }
   
   .form_block75{
@@ -20,4 +20,12 @@
 
 .Polaris-DataTable__Cell--header {
   text-align: center !important;
+}
+
+.input-group{
+  width: 85%;
+}
+
+.form-control {
+  width: 120px;
 }

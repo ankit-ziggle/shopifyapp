@@ -80,15 +80,79 @@
 <%
 =end%>
   </div>
+  <div class ="form_block25" >
+  <%= f.label :Start %>
+  </div>
+  <div class ="form_block75"  >
+  <%
+=begin%>
+ <div class="Polaris-TextField Polaris-TextField--hasValue"><%= f.text_field :padding, :class=>'Polaris-TextField__Input', placeholder: "Padding" %><div class="Polaris-TextField__Backdrop"></div></div> 
+<%
+=end%>
+
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker1'>
+                <div class="Polaris-TextField"><%= f.datetime_field :active_at, :class=>'Polaris-TextField__Input form-control', placeholder: "Date-time"  %></div>
+                    <%
+=begin%>
+ <input type='text' class="form-control" /> 
+<%
+=end%>
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <%
+=begin%>
+ <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker1').datetimepicker();
+            });
+        </script> 
+<%
+=end%>
+  <div class ="form_block25" >
+  <%= f.label :End %>
+  </div>
+  <div class ="form_block75"  >
+  <%
+=begin%>
+ <div class="Polaris-TextField Polaris-TextField--hasValue"><%= f.text_field :padding, :class=>'Polaris-TextField__Input', placeholder: "Padding" %><div class="Polaris-TextField__Backdrop"></div></div> 
+<%
+=end%>
+
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker1'>
+                <div class="Polaris-TextField"><%= f.datetime_field :deactive_at, :class=>'Polaris-TextField__Input form-control', placeholder: "Date-time"  %></div>
+                    <%
+=begin%>
+ <input type='text' class="form-control" /> 
+<%
+=end%>
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <%
+=begin%>
+ <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker1').datetimepicker();
+            });
+        </script> 
+<%
+=end%>
+  
 
   <div class ="form_block25"  >
   <div class="Polaris-FormLayout__Item"><button type="submit" class="Polaris-Button"><span class="Polaris-Button__Content"><span class="Polaris-Button__Text">Save</span></span></button></div></div><span class="Polaris-VisuallyHidden"><button type="submit" aria-hidden="true"></button></span>
-  <%
-=begin%>
- <%= f.submit 'Save', class: "btn", data: { confirm: 'Message Saved' } %> 
-<%
-=end%>
+
 </div>
+
 <% end %>
 </div>
   <button type="button" class="Polaris-Button Polaris-Button--primary" onclick="formAdd()" ><span class="Polaris-Button__Content"><span class="Polaris-Button__Text">Add Banner</span></span></button>
@@ -123,6 +187,8 @@
                     <th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 53px;">Font Size	</th>
                     <th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 53px;">Background Color	</th>
                     <th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 53px;">Padding</th>
+                    <th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 53px;">Active At</th>
+                    <th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 53px;">Deactive At</th>
                     <th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 53px;">Activate</th>
                     <th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 53px;"></th>
 
@@ -158,9 +224,15 @@
                     
                     </div> </td>
                     <td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 112px;"><div class="Polaris-TextField Polaris-TextField--hasValue"><%= f.text_field :padding, :class=>'Polaris-TextField__Input', placeholder: "Padding" %><div class="Polaris-TextField__Backdrop"></div></div></td>
-                    <td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 112px;"><label class="Polaris-Choice" ><span class="Polaris-Choice__Control"><span class="Polaris-RadioButton"><%= f.radio_button :is_active, "1",{:class=>'Polaris-RadioButton__Input', placeholder: "Activate",checked: banner.is_active==1}%><span class="Polaris-RadioButton__Backdrop"></span><span class="Polaris-RadioButton__Icon"></span></span></span><span class="Polaris-Choice__Label"></span></label></td>
+                    <td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 112px;"><div class='input-group date' id='datetimepicker1'><div class="Polaris-TextField Polaris-TextField--hasValue"><%= f.datetime_field :active_at, :class=>'form-control', placeholder: "Date-time"  %></div></div></td>
+                    <td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 112px;"><div class='input-group date' id='datetimepicker1'><div class="Polaris-TextField Polaris-TextField--hasValue"><%= f.datetime_field :deactive_at, :class=>'form-control', placeholder: "Date-time"  %></div></div></td>
+                    <td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 112px;"><label class="Polaris-Choice" ><span class="Polaris-Choice__Control"><span class="Polaris-RadioButton"><%= f.radio_button :is_active, "1",{:class=>'Polaris-RadioButton__Input', placeholder: "Activate",checked: banner.is_active==1}%><span class="Polaris-RadioButton__Backdrop"></span><span class="Polaris-RadioButton__Icon"></span></span></span><span class="Polaris-Choice__Label"></span></label><button type="submit" class="Polaris-Button"><span class="Polaris-Button__Content"><span class="Polaris-Button__Text">Save</span></span></button></td>
                       <%= f.hidden_field :id %>
-                    <td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 112px;"><div class="Polaris-FormLayout__Item"><button type="submit" class="Polaris-Button"><span class="Polaris-Button__Content"><span class="Polaris-Button__Text">Save</span></span></button></div></div><span class="Polaris-VisuallyHidden"><button type="submit" aria-hidden="true"></button></span></td>
+                    <%
+=begin%>
+ <td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 112px;"><div class="Polaris-FormLayout__Item"><button type="submit" class="Polaris-Button"><span class="Polaris-Button__Content"><span class="Polaris-Button__Text">Save</span></span></button></div></div><span class="Polaris-VisuallyHidden"><button type="submit" aria-hidden="true"></button></span></td> 
+<%
+=end%>
                      <% end %>
                   </tr>
                   <% end %>
@@ -173,10 +245,31 @@
     </div>
   </div>
 </div>
-<h2>Previously used Banner</h2>
 
- 
 <script>
+// $(document).ready(function(){
+
+// $('#datetimepicker1').datetimepicker({
+
+// });
+// $('#datetimepicker').datetimepicker({value:'2015/04/15 05:03', step:10});
+// $('.some_class').datetimepicker();
+// $('#default_datetimepicker').datetimepicker({
+// 	formatTime:'H:i',
+// 	formatDate:'d.m.Y',
+// 	//defaultDate:'8.12.1986', // it's my birthday
+// 	defaultDate:'+03.01.1970', // it's my birthday
+// 	defaultTime:'10:00',
+// 	timepickerScrollbar:false
+// });
+// $('#datetimepicker10').datetimepicker({
+// 	step:5,
+// 	inline:true
+// });
+
+// })
+
+
 let d_form=document.getElementById('form_add');
 d_form.style.display='none';
 function formAdd(){
@@ -185,8 +278,13 @@ function formAdd(){
 
 }
 
-  
+  $(function () {
+                $('#datetimepicker1').datetimepicker();
+            });
 
+   $(function () {
+                $('#datetimepicker2').datetimepicker();
+            });
   $('.mini-col').minicolors(
     {
         opacity: false,
@@ -205,5 +303,6 @@ function formAdd(){
   
   }
   );
+
 
 </script>
