@@ -1,0 +1,14 @@
+
+<% content_for :javascript do %>
+  <script type="text/javascript">
+    ShopifyApp.ready(function(){
+      ShopifyApp.Bar.initialize({ title: "Add Banner" });
+    });
+  </script>
+<% end %>
+<div id="form_add">
+<%= form_for @banner.present? ? @banner: :banner,:url => :shop_modify, :method => :POST do |f| %>
+    <%= render partial: 'form', locals: { f: f } %>
+<% end %>  
+
+</div>

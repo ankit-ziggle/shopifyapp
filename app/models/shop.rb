@@ -1,4 +1,4 @@
 class Shop < ActiveRecord::Base
   include ShopifyApp::SessionStorage
-  has_many :banner,dependent: :destroy
+  has_many :banners,dependent: :destroy
 end

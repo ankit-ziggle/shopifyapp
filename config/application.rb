@@ -15,5 +15,13 @@ module App1
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+
+    # config.action_dispatch.default_headers = {
+    #   'Access-Control-Allow-Origin' => '*',
+      
+    # }
+
+    config.time_zone = 'Kolkata'
+    config.active_record.default_timezone = :local
   end
 end

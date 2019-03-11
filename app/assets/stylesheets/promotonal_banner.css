@@ -29,3 +29,26 @@
 .form-control {
   width: 120px;
 }
+
+.Polaris-Page {
+  padding: 3.2rem !important;
+}
+
+.Polaris-Button--primary {
+  float: right !important;
+}
+
+.Polaris-DataTable__Cell {
+
+  white-space: initial !important;
+  text-align: center !important;
+  
+}
+
+.color_box{
+  float: left;
+  width: 20px;
+  height: 20px;
+  margin: 5px;
+  border: 1px solid rgba(0, 0, 0, .2);
+}

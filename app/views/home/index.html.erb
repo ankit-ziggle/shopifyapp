@@ -2,163 +2,18 @@
 <% content_for :javascript do %>
   <script type="text/javascript">
     ShopifyApp.ready(function(){
-      ShopifyApp.Bar.initialize({ title: "Home" });
+      ShopifyApp.Bar.initialize({ title: "Banners List" });
     });
   </script>
 <% end %>
-
-<h2> Promotional Message </h2>
-
-
-<div id="form_add">
-<%= form_for @banner.present? ? @banner: :banner,:url => :shop_modify, :method => :POST do |f| %>
-
-
-   <% if @banner.present? %>
-  <%=f.hidden_field :shop_id, value: @banner&.shop_id %>
-   <% end %>
-   <div class ="form_block25" >
-   <%= f.label :Write_your_Promotional_Message %>
-   </div>
-  <div class ="form_block75"  >
-  <div class="Polaris-TextField Polaris-TextField--hasValue form_textarea"><%= f.text_field :text, :class=>'Polaris-TextField__Input', placeholder: "Banner Text" %><div class="Polaris-TextField__Backdrop"></div></div>
-  
-</div>
-<div class ="form_block25" >
-  <%= f.label :Font_Color %>
-  </div>
-  <div class ="form_block75"  >
-  <div class="Polaris-TextField">
-                           <%= f.text_field :font_color, :class=>'Polaris-TextField__Input mini-col', placeholder: "select color" %>
-                           <div class="Polaris-TextField__Backdrop"></div>
-                           </div>
-  <%
-=begin%>
- <div class="Polaris-TextField Polaris-TextField--hasValue">
-  <%= f.text_field :font_color,  :class => "mini-col", placeholder: "eg: Black or #dde244" %>
-  
-  </div> 
-<%
-=end%>
-  
-  </div> 
- 
- 
-<div class ="form_block25" >
-  <%= f.label :Font_Size %>
-  </div>
-  <div class ="form_block75"  >
-  <div class="Polaris-TextField Polaris-TextField--hasValue"><%= f.text_field :font_size, :class=>'Polaris-TextField__Input', placeholder: "Font Size"%><div class="Polaris-TextField__Backdrop"></div></div> 
-  </div>
-<div class ="form_block25" >
-  <%= f.label :background_color %>
-  </div>
-  <div class ="form_block75"  >
-
-  <div class="Polaris-TextField">
-                           <%= f.text_field :background_color, :class=>'Polaris-TextField__Input mini-col', placeholder: "select color" %>
-                           <div class="Polaris-TextField__Backdrop"></div>
-                           </div>
-  <%
-=begin%>
- <div class="Polaris-TextField Polaris-TextField--hasValue"><%= f.text_field :background_color,  :class => "mini-col", placeholder: "eg: Black or #dde244" %></div>  
-<%
-=end%>
-  
-  
- 
-  </div>
-  
-<div class ="form_block25" >
-  <%= f.label :Padding %>
-  </div>
-  <div class ="form_block75"  >
-  <div class="Polaris-TextField Polaris-TextField--hasValue"><%= f.text_field :padding, :class=>'Polaris-TextField__Input', placeholder: "Padding" %><div class="Polaris-TextField__Backdrop"></div></div>
-  <%
-=begin%>
- <%= f.text_field :padding, :class=>'form_padding', placeholder: "Padding" %> 
-<%
-=end%>
-  </div>
-  <div class ="form_block25" >
-  <%= f.label :Start %>
-  </div>
-  <div class ="form_block75"  >
-  <%
-=begin%>
- <div class="Polaris-TextField Polaris-TextField--hasValue"><%= f.text_field :padding, :class=>'Polaris-TextField__Input', placeholder: "Padding" %><div class="Polaris-TextField__Backdrop"></div></div> 
-<%
-=end%>
-
-            <div class="form-group">
-                <div class='input-group date' id='datetimepicker1'>
-                <div class="Polaris-TextField"><%= f.datetime_field :active_at, :class=>'Polaris-TextField__Input form-control', placeholder: "Date-time"  %></div>
-                    <%
-=begin%>
- <input type='text' class="form-control" /> 
-<%
-=end%>
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                </div>
-            </div>
-        </div>
-        <%
-=begin%>
- <script type="text/javascript">
-            $(function () {
-                $('#datetimepicker1').datetimepicker();
-            });
-        </script> 
-<%
-=end%>
-  <div class ="form_block25" >
-  <%= f.label :End %>
-  </div>
-  <div class ="form_block75"  >
-  <%
-=begin%>
- <div class="Polaris-TextField Polaris-TextField--hasValue"><%= f.text_field :padding, :class=>'Polaris-TextField__Input', placeholder: "Padding" %><div class="Polaris-TextField__Backdrop"></div></div> 
-<%
-=end%>
-
-            <div class="form-group">
-                <div class='input-group date' id='datetimepicker1'>
-                <div class="Polaris-TextField"><%= f.datetime_field :deactive_at, :class=>'Polaris-TextField__Input form-control', placeholder: "Date-time"  %></div>
-                    <%
-=begin%>
- <input type='text' class="form-control" /> 
-<%
-=end%>
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                </div>
-            </div>
-        </div>
-        <%
-=begin%>
- <script type="text/javascript">
-            $(function () {
-                $('#datetimepicker1').datetimepicker();
-            });
-        </script> 
-<%
-=end%>
-  
-
-  <div class ="form_block25"  >
-  <div class="Polaris-FormLayout__Item"><button type="submit" class="Polaris-Button"><span class="Polaris-Button__Content"><span class="Polaris-Button__Text">Save</span></span></button></div></div><span class="Polaris-VisuallyHidden"><button type="submit" aria-hidden="true"></button></span>
-
-</div>
-
-<% end %>
-</div>
-  <button type="button" class="Polaris-Button Polaris-Button--primary" onclick="formAdd()" ><span class="Polaris-Button__Content"><span class="Polaris-Button__Text">Add Banner</span></span></button>
-
 <div style="--top-bar-background:#00848e; --top-bar-color:#f9fafb; --top-bar-background-lighter:#1d9ba4;">
   <div class="Polaris-Page">
+  <%= link_to 'Add Banner', new_banner_path, class: 'Polaris-Button Polaris-Button--primary' %>
+  <%
+=begin%>
+ <button type="button" class="Polaris-Button Polaris-Button--primary" href="/shop/banner" ><span class="Polaris-Button__Content"><span class="Polaris-Button__Text">Add Banner</span></span></button> 
+<%
+=end%>
     <div class="Polaris-Page-Header">
       <div class="Polaris-Page-Header__TitleAndRollup">
         <div class="Polaris-Page-Header__Title">
@@ -189,7 +44,8 @@
                     <th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 53px;">Padding</th>
                     <th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 53px;">Active At</th>
                     <th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 53px;">Deactive At</th>
-                    <th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 53px;">Activate</th>
+                    <th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 53px;">Is Default</th>
+                    <th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 53px;">Action</th>
                     <th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 53px;"></th>
 
                   </tr>
@@ -199,40 +55,27 @@
                
                     <tr class="Polaris-DataTable__TableRow">
                       <%= form_for banner,:url => :shop_modify, :method => :POST do |f| %>
-                    <td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--text"  style="height: 112px;"><div class="Polaris-TextField Polaris-TextField--hasValue"><%= f.text_field :text, :class=>'Polaris-TextField__Input', placeholder: "Banner Text" %><div class="Polaris-TextField__Backdrop"></div></div></td>
+                    <td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--text"  style="height: 112px;"><%= banner.text %></td>
                     <td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 112px;"><div class="Polaris-TextField">
+                           <div class="color_box" style="background: <%= banner.font_color %>"></div>
                            <%= f.hidden_field :font_color, :class=>'Polaris-TextField__Input', id:"f-#{banner.id}",  placeholder: "select color" %>
-                           <%= f.text_field :font_color,  :class => "mini-col Polaris-TextField__Input", placeholder: "eg: Black or #dde244", id:"c-#{banner.id}" %>
-                           <%
-=begin%>
- <input type="text" class="mini-col Polaris-TextField__Input" id="c-<%=banner.id %>" /> 
-<%
-=end%>
-                           <div class="Polaris-TextField__Backdrop"></div>
-                           </div></td>
-                    <td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 112px;"><div class="Polaris-TextField Polaris-TextField--hasValue"><%= f.text_field :font_size, :class=>'Polaris-TextField__Input', placeholder: "Font Size"%><div class="Polaris-TextField__Backdrop"></div></div> </td>
-                    <td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 112px;"><div class="Polaris-TextField Polaris-TextField--hasValue">
+                           <%= banner.font_color %>
+                           </td>
+                    <td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 112px;"><%= banner.font_size %></td>
+                    <td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 112px;">
+                    <div class="color_box" style="background:  <%= banner.background_color %>"></div>
                     <%= f.hidden_field :background_color, id:"b-#{banner.id}", placeholder: "eg: Black or #dde244" %>
-                    <%= f.text_field :background_color,  :class => "mini-col Polaris-TextField__Input", placeholder: "eg: Black or #dde244", id:"c-#{banner.id}" %>
-                    <%
-=begin%>
- <input type="text" class="mini-col Polaris-TextField__Input" id="t-<%=banner.id %>" /> 
-<%
-=end%>
+                    <%= banner.background_color %>
+           
                     
-                     <div class="Polaris-TextField__Backdrop"></div>
+                     </td>
+                    <td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 112px;"><%= banner.padding %></td>
+                    <td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 112px;"><%= banner.active_at .strftime("%F %T") %></td>
+                    <td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 112px;"><%= banner.deactive_at .strftime("%F %T")%></td>
+                    <td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 112px;"><%= banner.default ? 'Yes' : 'No' %></td>
                     
-                    </div> </td>
-                    <td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 112px;"><div class="Polaris-TextField Polaris-TextField--hasValue"><%= f.text_field :padding, :class=>'Polaris-TextField__Input', placeholder: "Padding" %><div class="Polaris-TextField__Backdrop"></div></div></td>
-                    <td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 112px;"><div class='input-group date' id='datetimepicker1'><div class="Polaris-TextField Polaris-TextField--hasValue"><%= f.datetime_field :active_at, :class=>'form-control', placeholder: "Date-time"  %></div></div></td>
-                    <td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 112px;"><div class='input-group date' id='datetimepicker1'><div class="Polaris-TextField Polaris-TextField--hasValue"><%= f.datetime_field :deactive_at, :class=>'form-control', placeholder: "Date-time"  %></div></div></td>
-                    <td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 112px;"><label class="Polaris-Choice" ><span class="Polaris-Choice__Control"><span class="Polaris-RadioButton"><%= f.radio_button :is_active, "1",{:class=>'Polaris-RadioButton__Input', placeholder: "Activate",checked: banner.is_active==1}%><span class="Polaris-RadioButton__Backdrop"></span><span class="Polaris-RadioButton__Icon"></span></span></span><span class="Polaris-Choice__Label"></span></label><button type="submit" class="Polaris-Button"><span class="Polaris-Button__Content"><span class="Polaris-Button__Text">Save</span></span></button></td>
-                      <%= f.hidden_field :id %>
-                    <%
-=begin%>
- <td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 112px;"><div class="Polaris-FormLayout__Item"><button type="submit" class="Polaris-Button"><span class="Polaris-Button__Content"><span class="Polaris-Button__Text">Save</span></span></button></div></div><span class="Polaris-VisuallyHidden"><button type="submit" aria-hidden="true"></button></span></td> 
-<%
-=end%>
+                    <td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 112px;"><%= link_to 'Edit', edit_banner_path(id:banner.id), class: 'Polaris-Button Polaris-Button--primary' %>  </td>
+                    
                      <% end %>
                   </tr>
                   <% end %>

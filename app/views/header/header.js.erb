@@ -1,13 +1,36 @@
+
+let schedule=<%=raw @banner %>
+
+setBanner(schedule)
+function setBanner(val){
+$('.mystyle').remove();
 var div = document.createElement("div");
+div.classList.add("mystyle");
 div.style.width = "100%";
-div.style.background = "<%= @banner[:background_color] %>";
-div.style.color = "<%= @banner[:font_color] %>";
-div.style.fontSize = "<%= @banner[:font_size] %>px";
-div.style.padding = "<%= @banner[:padding] %>px";
+div.style.background = val.background_color;
+div.style.color = val.font_color;
+div.style.fontSize = val.font_size+"px";
+div.style.padding = val.padding+"px";
 div.style.textAlign = "center";
 div.style.wordBreak = "break-word";
 div.style.textTransform = "capitalize";
-
-div.innerHTML = "<%= @banner[:text] %>";
-
+div.innerHTML = val.text;
 document.getElementsByClassName('shopify-section')[0].prepend(div);
+
+}
+setInterval(callBanner,10000);
+function callBanner(){
+$.ajax({
+method:'GET',
+url:'/apps/testapp1/api/records',
+success:function(data,textStatus,xhr){
+
+//schedule=data.scheduled;
+setBanner(data)
+},
+error:function(er){
+console.log(er);
+}
+
+})
+}
