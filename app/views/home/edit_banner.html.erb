@@ -1,14 +1,8 @@
-
 <% content_for :javascript do %>
-  <script type="text/javascript">
+<script type="text/javascript">
     ShopifyApp.ready(function(){
-      ShopifyApp.Bar.initialize({ title: "Edit Banner" });
+      ShopifyApp.Bar.initialize({ title: "Baneer List/Edit Banner" });
     });
-  </script>
-<% end %>
-<div id="form_add">
-<%= form_for @banner.present? ? @banner: :banner,:url => :shop_modify, :method => :PUT do |f| %>
-    <%= render partial: 'form', locals: { f: f } %>
-<% end %>  
-
+  </script><% end %>
+<div id="form_add"><%= form_for @banner.present? ? @banner: :banner,:url => :shop_modify, :method => :PUT do |f| %><%= render partial: 'form', locals: { f: f } %><% end %>
 </div>

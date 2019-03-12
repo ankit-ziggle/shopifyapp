@@ -1,132 +1,86 @@
  
-<% if @banner.present? %>
-  <%=f.hidden_field :shop_id, value: @banner&.shop_id %>
-  <%=f.hidden_field :id %>
-   <% end %>
-   <div class ="form_block25" >
-   <%= f.label :Write_your_Promotional_Message %>
-   </div>
-  <div class ="form_block75"  >
-  <div class="Polaris-TextField Polaris-TextField--hasValue form_textarea"><%= f.text_field :text, :class=>'Polaris-TextField__Input', placeholder: "Banner Text" %><div class="Polaris-TextField__Backdrop"></div></div>
-  
+<% if @banner.present? %><%=f.hidden_field :shop_id, value: @banner&.shop_id %><%=f.hidden_field :id %><% end %>
+<div class ="form_block25" ><%= f.label :Write_your_Promotional_Message %>
 </div>
-<div class ="form_block25" >
-  <%= f.label :Font_Color %>
-  </div>
-  <div class ="form_block75"  >
-  <div class="Polaris-TextField">
-                           <%= f.text_field :font_color, :class=>'Polaris-TextField__Input mini-col', placeholder: "select color" %>
-                           <div class="Polaris-TextField__Backdrop"></div>
-                           </div>
-
-  
-  </div> 
- 
- 
-<div class ="form_block25" >
-  <%= f.label :Font_Size %>
-  </div>
-  <div class ="form_block75"  >
-  <div class="Polaris-TextField Polaris-TextField--hasValue"><%= f.text_field :font_size, :class=>'Polaris-TextField__Input', placeholder: "Font Size"%><div class="Polaris-TextField__Backdrop"></div></div> 
-  </div>
-<div class ="form_block25" >
-  <%= f.label :background_color %>
-  </div>
-  <div class ="form_block75"  >
-
-  <div class="Polaris-TextField">
-                           <%= f.text_field :background_color, :class=>'Polaris-TextField__Input mini-col', placeholder: "select color" %>
-                           <div class="Polaris-TextField__Backdrop"></div>
-                           </div>
-
-  
-  
- 
-  </div>
-  
-<div class ="form_block25" >
-  <%= f.label :Padding %>
-  </div>
-  <div class ="form_block75"  >
-  <div class="Polaris-TextField Polaris-TextField--hasValue"><%= f.text_field :padding, :class=>'Polaris-TextField__Input', placeholder: "Padding" %><div class="Polaris-TextField__Backdrop"></div></div>
-
-  </div>
-  <div class ="form_block25" >
-  <%= f.label :Start %>
-  </div>
-  <div class ="form_block75"  >
-
-
-            <div class="form-group">
-                <div class='input-group date' id='datetimepicker1'>
-                <div class="Polaris-TextField"><%= f.datetime_field :active_at, :class=>'Polaris-TextField__Input form-control', placeholder: "Date-time"  %></div>
-
-                    
-                </div>
-            </div>
-        </div>
-
-  <div class ="form_block25" >
-  <%= f.label :End %>
-  </div>
-  <div class ="form_block75"  >
-            <div class="form-group">
-                <div class='input-group date' id='datetimepicker1'>
-                <div class="Polaris-TextField"><%= f.datetime_field :deactive_at, :class=>'Polaris-TextField__Input form-control', placeholder: "Date-time"  %></div>
-
-                    
-                </div>
-            </div>
-        </div>
-
-    <div class ="form_block25" >
-  <%= f.label "Set as Active" %> <br />
-        
-  </div>
-  <div class ="form_block75"  >
-  <%=  f.check_box( :is_active,{class: '' }, "true", "false") %>
-  </div>
-      <div class ="form_block25" >
-  <%= f.label "Set as Default" %> <br />
-        
-  </div>
-  <div class ="form_block75"  >
-  <%=  f.check_box( :default,{class: '' }, "true", "false") %>
-<%
-=begin%>
- <label class="Polaris-Choice" for="Checkbox1"><span class="Polaris-Choice__Control"><span class="Polaris-Checkbox"> 
-<%
-=end%>
-
-<%
-=begin%>
- <input id="Checkbox1" type="checkbox" class="Polaris-Checkbox__Input" aria-invalid="false" role="checkbox" aria-checked="false" value=""/> 
-<%
-=end%>
-<%
-=begin%>
- <span class="Polaris-Checkbox__Backdrop"></span>
-<span class="Polaris-Checkbox__Icon">
-<span class="Polaris-Icon">
-<svg viewBox="0 0 20 20" class="Polaris-Icon__Svg" focusable="false" aria-hidden="true">
-              <path d="M8.315 13.859l-3.182-3.417a.506.506 0 0 1 0-.684l.643-.683a.437.437 0 0 1 .642 0l2.22 2.393 4.942-5.327a.437.437 0 0 1 .643 0l.643.684a.504.504 0 0 1 0 .683l-5.91 6.35a.437.437 0 0 1-.642 0"></path>
-            </svg>
-            </span>
-            </span>
-            </span></span></label> 
-<%
-=end%>
-
+<div class ="form_block75"  >
+	<div class="Polaris-TextField Polaris-TextField--hasValue form_textarea"><%= f.text_field :text, :class=>'Polaris-TextField__Input', placeholder: "Banner Text" %>
+		<div class="Polaris-TextField__Backdrop"></div>
+	</div>
 </div>
-
-  
-
-
-  <div class ="form_block25"  >
-  <div class="Polaris-FormLayout__Item"><button type="submit" class="Polaris-Button"><span class="Polaris-Button__Content"><span class="Polaris-Button__Text">Save</span></span></button></div></div><span class="Polaris-VisuallyHidden"><button type="submit" aria-hidden="true"></button></span></div>
- 
-
-  <script>
+<div class ="form_block25" ><%= f.label :Font_Color %>
+</div>
+<div class ="form_block75"  >
+	<div class="Polaris-TextField"><%= f.text_field :font_color, :class=>'Polaris-TextField__Input mini-col', placeholder: "select color" %>
+		<div class="Polaris-TextField__Backdrop"></div>
+	</div>
+</div>
+<div class ="form_block25" ><%= f.label :Font_Size %>
+</div>
+<div class ="form_block75"  >
+	<div class="Polaris-TextField Polaris-TextField--hasValue"><%= f.text_field :font_size, :class=>'Polaris-TextField__Input', placeholder: "Font Size"%>
+		<div class="Polaris-TextField__Backdrop"></div>
+	</div>
+</div>
+<div class ="form_block25" ><%= f.label :background_color %>
+</div>
+<div class ="form_block75"  >
+	<div class="Polaris-TextField"><%= f.text_field :background_color, :class=>'Polaris-TextField__Input mini-col', placeholder: "select color" %>
+		<div class="Polaris-TextField__Backdrop"></div>
+	</div>
+</div>
+<div class ="form_block25" ><%= f.label :Padding %>
+</div>
+<div class ="form_block75"  >
+	<div class="Polaris-TextField Polaris-TextField--hasValue"><%= f.text_field :padding, :class=>'Polaris-TextField__Input', placeholder: "Padding" %>
+		<div class="Polaris-TextField__Backdrop"></div>
+	</div>
+</div>
+<div class ="form_block25" ><%= f.label :Start %>
+</div>
+<div class ="form_block75"  >
+	<div class="form-group">
+		<div class='input-group date' >
+			<div class="Polaris-TextField"><%= f.text_field :active_at, :class=>'Polaris-TextField__Input form-control',:id=>'datetimepicker', placeholder: "Date-time"  %>
+				<div class="Polaris-TextField__Backdrop"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class ="form_block25" ><%= f.label :End %>
+</div>
+<div class ="form_block75"  >
+	<div class="form-group">
+		<div class='input-group date' >
+			<div class="Polaris-TextField"><%= f.text_field :deactive_at, :class=>'Polaris-TextField__Input form-control',:id=>'datetimepicker1', placeholder: "Date-time"  %>
+				<div class="Polaris-TextField__Backdrop"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class ="form_block25" ><%= f.label "Set as Active" %>
+	<br />
+</div>
+<div class ="form_block75"  ><%=  f.check_box( :is_active,{class: '' }, "true", "false") %>
+</div>
+<div class ="form_block25" ><%= f.label "Set as Default" %>
+	<br />
+</div>
+<div class ="form_block75"  ><%=  f.check_box( :default,{class: '' }, "true", "false") %>
+</div>
+<div class ="form_block25"  >
+	<div class="Polaris-FormLayout__Item">
+		<button type="submit" class="Polaris-Button Polaris-Button Polaris-Button--primary">
+			<span class="Polaris-Button__Content ">
+				<span class="Polaris-Button__Text">Save</span>
+			</span>
+		</button>
+	</div>
+</div>
+<span class="Polaris-VisuallyHidden">
+	<button type="submit" aria-hidden="true"></button>
+</span>
+</div>
+<script>
   $('.mini-col').minicolors(
     {
         opacity: false,
@@ -146,5 +100,7 @@
   }
   );
 
+jQuery('#datetimepicker').datetimepicker();
+jQuery('#datetimepicker1').datetimepicker();
 
 </script>

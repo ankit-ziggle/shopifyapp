@@ -11,6 +11,7 @@
 // about supported directives.
 //= require jquery3
 //= require jquery.minicolors
+//= require jquery.datetimepicker
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks

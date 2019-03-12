@@ -41,7 +41,7 @@ class HomeController < ShopifyApp::AuthenticatedController
     redirect_to action: 'index'
   end
 
-  def new
+  def new_banner
     @banner=Banner.new
   
     shop_name=session[:shopify_domain]
